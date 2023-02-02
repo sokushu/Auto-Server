@@ -1,11 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-using AutoServer.Command;
+﻿using AutoServer.Core;
+using AutoServer.InterFaces;
+using SevenZip;
+using System.IO.Compression;
 
-Task.Run(() =>
+public class Program
 {
-    var FileFinder = new CommandFileFinder("D:\\个人文件\\新建文件夹\\");
+    public static void Main(string[] args)
+    {
+        GetArgs.SetArgs(args);
 
-    var Invoker = new CommandInvoker();
-});
+        CommandFactory commandFactory = new CommandFactory();
+        ICommand command = commandFactory.CreateCommand(GetArgs.Get());
 
-Console.ReadLine();
+        command.Exce();
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AutoServer": {
+      "commandName": "Project",
+      "commandLineArgs": "\"-115\" \"Hee\" \"Hee\""
+    }
+  }
+}
